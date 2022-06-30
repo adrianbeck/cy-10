@@ -8,7 +8,6 @@
   },
   "keywords": [],
   "author": "Adrian Beck",
-  "license": "MIT",
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "11.3.0",
     "@cypress/browserify-preprocessor": "3.0.2",
