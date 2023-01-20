@@ -9,7 +9,6 @@ jobs:
   e2e-tests:
     name: E2E_Tests
     runs-on: ubuntu-20.04
-    container: cypress/included:10.2.0
     timeout-minutes: 10
 
     steps:
@@ -18,6 +17,13 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        
+      - name: secret
+        run: echo {SECRET_USERNAME}
 
       - name: Tests
-        run: npm test
+        uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
+          env: USERNAME={SECRET_USERNAME}
+          
